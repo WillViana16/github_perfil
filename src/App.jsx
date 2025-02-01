@@ -5,33 +5,29 @@ import { useEffect, useState } from "react";
 import Perfil from "./components/Perfil";
 import Formulario from './components/Formulario';
 import ReposList from "./components/RepoList";
+import Pesquisa from "./components/Pesquisa";
+
 
 
 function App(){
   const [formularioEstaVisivel, setFormularioEstaVisivel] = useState(true)
   const [nomeUsuario, setNomeUsuario] = useState('')
-  
+
+  const aoPesquisar = (nome) => {
+    setNomeUsuario(nome); // Atualiza o estado com o nome do usuário
+  };
+
   return(
-    <>
-    <input type="text" onBlur={(e) => setNomeUsuario(e.target.value)} />
-    
-    {nomeUsuario.length > 4 && (
-      <>
-      <Perfil nomeUsuario={nomeUsuario}/>
-      < ReposList nomeUsuario={nomeUsuario}/>
-      </>
-    )}
-
-    { /*{formularioEstaVisivel &&(
-      <Formulario />
-    )}
-
-    <button type="button">toggle form onClick={() => setFormularioEstaVisivel(!formularioEstaVisivel)}</button> */}
+    <div>
+    <Pesquisa aoPesquisar={aoPesquisar} />
+    {nomeUsuario && 
+    <> 
+    <Perfil nomeUsuario={nomeUsuario} />
+    <ReposList nomeUsuario={nomeUsuario} />
     </>
-  )
+    }
+</div>
+);
 }
-
-  
-
 
 export default App

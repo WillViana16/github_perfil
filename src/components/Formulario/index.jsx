@@ -16,8 +16,7 @@ const Formulario = () => {
     }, [materiaA]);
 
     const alteraNome = (evento) => {
-        setNome(evento.target.value) 
-        // console.log(evento.target.value)
+        setNome(evento.target.value)
         return evento.target.value
     }
 

@@ -12,11 +12,7 @@
 
 .itemName b, .itemLanguage b {
     margin-right: 8px;
-
-
 }
-
-
 
 .itemLink {
     display: block;
@@ -27,5 +23,10 @@
     margin-top: 8px;
     padding: 8px;
     text-decoration: none;
+}
+
+.inputUsuario {
+    width: 250px;
+    border: 1px solid var(--corPrincipal);
 }
 
